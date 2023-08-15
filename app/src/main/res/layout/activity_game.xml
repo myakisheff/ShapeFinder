@@ -5,26 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/menu_background"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="7dp"
+            android:padding="12dp"
             android:contentDescription="@string/back_to_menu_button"
             android:src="@drawable/ic_arrow_back"
+            android:background="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
         <TextView
             style="@style/InGameBar"
@@ -56,59 +58,59 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/shape_to_solve"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <GridLayout
+        android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:columnCount="3"
         android:orientation="horizontal"
-        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+        app:layout_constraintStart_toStartOf="parent">
 
         <android.widget.Button
             style="@style/InGameShapesToChoose"
-            android:contentDescription="@string/shape_to_choose"/>
+            android:contentDescription="@string/first_shape_to_choose" />
 
         <android.widget.Button
             style="@style/InGameShapesToChoose"
-            android:contentDescription="@string/shape_to_choose"/>
+            android:contentDescription="@string/second_shape_to_choose" />
 
         <android.widget.Button
             style="@style/InGameShapesToChoose"
-            android:contentDescription="@string/shape_to_choose"/>
+            android:contentDescription="@string/third_shape_to_choose" />
 
         <android.widget.Button
             style="@style/InGameShapesToChoose"
-            android:contentDescription="@string/shape_to_choose"/>
+            android:contentDescription="@string/fourth_shape_to_choose" />
 
         <android.widget.Button
             style="@style/InGameShapesToChoose"
-            android:contentDescription="@string/shape_to_choose"/>
+            android:contentDescription="@string/fifth_shape_to_choose" />
 
         <android.widget.Button
             style="@style/InGameShapesToChoose"
-            android:contentDescription="@string/shape_to_choose"/>
+            android:contentDescription="@string/sixth_shape_to_choose" />
 
         <android.widget.Button
             style="@style/InGameShapesToChoose"
-            android:contentDescription="@string/shape_to_choose"/>
+            android:contentDescription="@string/seventh_shape_to_choose" />
 
         <android.widget.Button
             style="@style/InGameShapesToChoose"
-            android:contentDescription="@string/shape_to_choose"/>
+            android:contentDescription="@string/eighth_shape_to_choose" />
 
         <android.widget.Button
             style="@style/InGameShapesToChoose"
-            android:contentDescription="@string/shape_to_choose"/>
+            android:contentDescription="@string/ninth_shape_to_choose" />
 
     </GridLayout>
 

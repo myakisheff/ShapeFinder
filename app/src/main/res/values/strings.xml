@@ -3,8 +3,16 @@
     <string name="game_logo">Game Logo</string>
     <string name="button_start">Start!</string>
     <string name="button_info">Info</string>
-    <string name="back_to_menu_button">back to menu button</string>
+    <string name="back_to_menu_button">back to menu</string>
     <string name="stage">Stage</string>
     <string name="shape_to_solve">A shape to find</string>
-    <string name="shape_to_choose">Shape to choose</string>
+    <string name="first_shape_to_choose">Choose a first shape</string>
+    <string name="second_shape_to_choose">Choose a second shape</string>
+    <string name="third_shape_to_choose">Choose a third shape</string>
+    <string name="fourth_shape_to_choose">Choose a fourth shape</string>
+    <string name="fifth_shape_to_choose">Choose a fifth shape</string>
+    <string name="sixth_shape_to_choose">Choose a sixth shape</string>
+    <string name="seventh_shape_to_choose">Choose a seventh shape</string>
+    <string name="eighth_shape_to_choose">Choose a eighth shape</string>
+    <string name="ninth_shape_to_choose">Choose a ninth shape</string>
 </resources>
