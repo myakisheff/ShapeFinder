@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/menu_background"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="7dp"
+            android:contentDescription="@string/back_to_menu_button"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/InGameBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00:00" />
+
+        <TextView
+            style="@style/InGameBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
+            android:gravity="center|end"
+            android:text="@string/stage"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Stage 0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:contentDescription="@string/shape_to_solve"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+        <android.widget.Button
+            style="@style/InGameShapesToChoose"
+            android:contentDescription="@string/shape_to_choose"/>
+
+        <android.widget.Button
+            style="@style/InGameShapesToChoose"
+            android:contentDescription="@string/shape_to_choose"/>
+
+        <android.widget.Button
+            style="@style/InGameShapesToChoose"
+            android:contentDescription="@string/shape_to_choose"/>
+
+        <android.widget.Button
+            style="@style/InGameShapesToChoose"
+            android:contentDescription="@string/shape_to_choose"/>
+
+        <android.widget.Button
+            style="@style/InGameShapesToChoose"
+            android:contentDescription="@string/shape_to_choose"/>
+
+        <android.widget.Button
+            style="@style/InGameShapesToChoose"
+            android:contentDescription="@string/shape_to_choose"/>
+
+        <android.widget.Button
+            style="@style/InGameShapesToChoose"
+            android:contentDescription="@string/shape_to_choose"/>
+
+        <android.widget.Button
+            style="@style/InGameShapesToChoose"
+            android:contentDescription="@string/shape_to_choose"/>
+
+        <android.widget.Button
+            style="@style/InGameShapesToChoose"
+            android:contentDescription="@string/shape_to_choose"/>
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
