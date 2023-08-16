@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.GridLayout
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.forEach
 
@@ -15,10 +16,25 @@ import androidx.core.view.forEach
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
+        val game = Game()
+
+        //set timer
+        val timer = findViewById<TextView>(R.id.timer)
+        timer.text = game.getTimer()
+
+        //set stage
+        val stage = findViewById<TextView>(R.id.stage)
+        stage.text = game.getStage()
+
         //TODO: creates a drawable file and show it in ImageView with id shapeToFind
 
+        val solvingShape: String = CompositeShape(2).chooseShape()
+
         val shapeToFind = findViewById<ImageView>(R.id.shapeToFind)
-        shapeToFind.setImageResource(R.drawable.ic_shape_default)
+
+        if(solvingShape == "ic_first_composite_shape")
+            shapeToFind.setImageResource(R.drawable.ic_first_composite_shape)
+        else shapeToFind.setImageResource(R.drawable.ic_second_composite_shape)
 
         val darkColor = Color.rgb(160, 160, 160)
         shapeToFind.setColorFilter(darkColor)

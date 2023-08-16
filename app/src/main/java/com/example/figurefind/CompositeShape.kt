@@ -1,14 +1,18 @@
 package com.example.figurefind
 
-class Shape(
+import androidx.core.util.toRange
+
+class CompositeShape(
     val countShapes: Int,
 ) {
-    fun chooseShape(){
-        when(countShapes)
+    fun chooseShape(): String{
+        return when(countShapes){
+            2 -> {
+                val range = 1..2
+                if(range.random() == 1) "ic_first_composite_shape"
+                else "ic_second_composite_shape"
+            }
+            else -> "ic_shape_square"
+        }
     }
-}
-
-enum class CompositeShapes{
-    SQUARE_CIRCLE,
-    
 }
