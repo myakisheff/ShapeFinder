@@ -20,6 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/timer"
         style="@style/InGameBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,6 +33,7 @@
         tools:text="00:00" />
 
     <TextView
+        android:id="@+id/stage"
         style="@style/InGameBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,7 +47,7 @@
         tools:text="Stage 0" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/shapeToFind"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:contentDescription="@string/shape_to_solve"
@@ -65,41 +67,51 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <android.widget.Button
+        <ImageButton
+            android:id="@+id/firstShape"
             style="@style/InGameShapesToChoose"
-            android:contentDescription="@string/first_shape_to_choose" />
+            android:contentDescription="@string/first_shape_to_choose"
+            android:src="@drawable/ic_shape_square" />
 
-        <android.widget.Button
+        <ImageButton
             style="@style/InGameShapesToChoose"
-            android:contentDescription="@string/second_shape_to_choose" />
+            android:contentDescription="@string/second_shape_to_choose"
+            android:src="@drawable/ic_shape_square" />
 
-        <android.widget.Button
+        <ImageButton
             style="@style/InGameShapesToChoose"
-            android:contentDescription="@string/third_shape_to_choose" />
+            android:contentDescription="@string/third_shape_to_choose"
+            android:src="@drawable/ic_shape_square"/>
 
-        <android.widget.Button
+        <ImageButton
             style="@style/InGameShapesToChoose"
-            android:contentDescription="@string/fourth_shape_to_choose" />
+            android:contentDescription="@string/fourth_shape_to_choose"
+            android:src="@drawable/ic_shape_square"/>
 
-        <android.widget.Button
+        <ImageButton
             style="@style/InGameShapesToChoose"
-            android:contentDescription="@string/fifth_shape_to_choose" />
+            android:contentDescription="@string/fifth_shape_to_choose"
+            android:src="@drawable/ic_shape_square" />
 
-        <android.widget.Button
+        <ImageButton
             style="@style/InGameShapesToChoose"
-            android:contentDescription="@string/sixth_shape_to_choose" />
+            android:contentDescription="@string/sixth_shape_to_choose"
+            android:src="@drawable/ic_shape_square"/>
 
-        <android.widget.Button
+        <ImageButton
             style="@style/InGameShapesToChoose"
-            android:contentDescription="@string/seventh_shape_to_choose" />
+            android:contentDescription="@string/seventh_shape_to_choose"
+            android:src="@drawable/ic_shape_square"/>
 
-        <android.widget.Button
+        <ImageButton
             style="@style/InGameShapesToChoose"
-            android:contentDescription="@string/eighth_shape_to_choose" />
+            android:contentDescription="@string/eighth_shape_to_choose"
+            android:src="@drawable/ic_shape_square"/>
 
-        <android.widget.Button
+        <ImageButton
             style="@style/InGameShapesToChoose"
-            android:contentDescription="@string/ninth_shape_to_choose" />
+            android:contentDescription="@string/ninth_shape_to_choose"
+            android:src="@drawable/ic_shape_square"/>
 
     </GridLayout>
 
