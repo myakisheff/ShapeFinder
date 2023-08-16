@@ -26,23 +26,24 @@ import androidx.core.view.forEach
         val stage = findViewById<TextView>(R.id.stage)
         stage.text = game.getStage()
 
-        //TODO: creates a drawable file and show it in ImageView with id shapeToFind
-
         val solvingShape: String = CompositeShape(2).chooseShape()
-
         val shapeToFind = findViewById<ImageView>(R.id.shapeToFind)
 
+        //selecting a shape based on randomly chose shape
         if(solvingShape == "ic_first_composite_shape")
             shapeToFind.setImageResource(R.drawable.ic_first_composite_shape)
         else shapeToFind.setImageResource(R.drawable.ic_second_composite_shape)
 
-        val darkColor = Color.rgb(160, 160, 160)
-        shapeToFind.setColorFilter(darkColor)
+        val fillColor = Color.rgb(160, 160, 160)
+        shapeToFind.setColorFilter(fillColor)
 
         val viewGroup = findViewById<GridLayout>(R.id.gridLayout)
         viewGroup.forEach {
             if(it is ImageButton){
                 it.setColorFilter(setRandomColor())
+                it.setOnClickListener {
+                    // TODO: check for a right shape or not and give some feedback
+                }
             }
         }
     }
