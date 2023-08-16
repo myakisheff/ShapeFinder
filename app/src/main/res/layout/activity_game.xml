@@ -45,7 +45,7 @@
         tools:text="Stage 0" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/shapeToFind"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:contentDescription="@string/shape_to_solve"
