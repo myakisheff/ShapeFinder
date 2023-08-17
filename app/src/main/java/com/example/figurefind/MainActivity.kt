@@ -16,16 +16,15 @@ import androidx.core.view.forEach
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
-        val game = Game()
-
         //set timer
         val timer = Timer()
         val timerView = findViewById<TextView>(R.id.timer)
         timerView.text = timer.getTimer()
 
         //set stage
-        val stage = findViewById<TextView>(R.id.stage)
-        stage.text = game.getStage()
+        val stage = Stage()
+        val stageView = findViewById<TextView>(R.id.stage)
+        stageView.text = stage.getStage()
 
         val solvingShape: String = CompositeShape(2).chooseShape()
         val shapeToFind = findViewById<ImageView>(R.id.shapeToFind)
