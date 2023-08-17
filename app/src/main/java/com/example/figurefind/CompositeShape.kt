@@ -5,7 +5,7 @@ class CompositeShape(
 ) {
     fun chooseShape(): Pair<String, List<String>> {
         //TODO: do a normal method... not this...
-
+        // need to choose a shape to solve
         return when(countShapes){
             2 -> {
                 val range = 1..2

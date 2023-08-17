@@ -17,10 +17,14 @@ import androidx.core.view.forEach
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
-        val timer = Timer()
+        val timerView = findViewById<TextView>(R.id.timer)
+
+        val timer = Timer(timerView)
         val stage = Stage()
 
-        initInfoBar(timer, stage)
+        updateInfoBar(stage)
+
+        timer.createNewTimer(20000);
 
         val solvingShape: Pair<String, List<String>> = CompositeShape(2).chooseShape()
         val shapeToFind = findViewById<ImageView>(R.id.shapeToFind)
@@ -37,7 +41,7 @@ import androidx.core.view.forEach
 
         val buttons = mutableMapOf<ImageButton, Int>()
         var field = 1
-        var allShapes = Shapes()
+        val allShapes = Shapes()
 
         //player actions
         val viewGroup = findViewById<GridLayout>(R.id.gridLayout)
@@ -53,22 +57,21 @@ import androidx.core.view.forEach
                     {
                         button.setImageResource(R.drawable.ic_right_field)
                         button.setColorFilter(Color.GREEN)
+                        timer.addTime(10000)
                     }
                     else {
                         button.setImageResource(R.drawable.ic_false_field)
                         button.setColorFilter(Color.RED)
+                        timer.removeTime(5000)
                     }
+                    updateInfoBar(stage)
                     button.setOnClickListener(null)
                 }
             }
         }
     }
 
-     private fun initInfoBar(timer: Timer, stage: Stage){
-         //set timer
-         val timerView = findViewById<TextView>(R.id.timer)
-         timerView.text = timer.getTimer()
-
+     private fun updateInfoBar(stage: Stage){
          //set stage
          val stageView = findViewById<TextView>(R.id.stage)
          stageView.text = stage.getStageString()
@@ -92,12 +95,9 @@ import androidx.core.view.forEach
          val shapeNumber = (stackShapes.indices).random()
 
          if(numberOfField in rightFields){
-
              id  = resources.getIdentifier("ic_shape_${shapes[rightShape++]}", "drawable", packageName)
-
          }
          else{
-
              if(stackShapes[shapeNumber] !in shapes){
                  id = resources.getIdentifier("ic_shape_${stackShapes[shapeNumber]}", "drawable", packageName)
                  allShapes.removeShape(stackShapes[shapeNumber])
@@ -108,7 +108,6 @@ import androidx.core.view.forEach
              }
 
          }
-
          buttonView.setImageResource(id)
      }
 
