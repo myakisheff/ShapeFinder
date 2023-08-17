@@ -19,8 +19,9 @@ import androidx.core.view.forEach
         val game = Game()
 
         //set timer
-        val timer = findViewById<TextView>(R.id.timer)
-        timer.text = game.getTimer()
+        val timer = Timer()
+        val timerView = findViewById<TextView>(R.id.timer)
+        timerView.text = timer.getTimer()
 
         //set stage
         val stage = findViewById<TextView>(R.id.stage)
