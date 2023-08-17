@@ -75,41 +75,49 @@
             android:src="@drawable/ic_shape_square" />
 
         <ImageButton
+            android:id="@+id/secondShape"
             style="@style/InGameShapesToChoose"
             android:contentDescription="@string/second_shape_to_choose"
             android:src="@drawable/ic_shape_square" />
 
         <ImageButton
+            android:id="@+id/thirdShape"
             style="@style/InGameShapesToChoose"
             android:contentDescription="@string/third_shape_to_choose"
             android:src="@drawable/ic_shape_square"/>
 
         <ImageButton
+            android:id="@+id/fourthShape"
             style="@style/InGameShapesToChoose"
             android:contentDescription="@string/fourth_shape_to_choose"
             android:src="@drawable/ic_shape_square"/>
 
         <ImageButton
+            android:id="@+id/fifthShape"
             style="@style/InGameShapesToChoose"
             android:contentDescription="@string/fifth_shape_to_choose"
             android:src="@drawable/ic_shape_square" />
 
         <ImageButton
+            android:id="@+id/sixthShape"
             style="@style/InGameShapesToChoose"
             android:contentDescription="@string/sixth_shape_to_choose"
             android:src="@drawable/ic_shape_square"/>
 
         <ImageButton
+            android:id="@+id/seventhShape"
             style="@style/InGameShapesToChoose"
             android:contentDescription="@string/seventh_shape_to_choose"
             android:src="@drawable/ic_shape_square"/>
 
         <ImageButton
+            android:id="@+id/eighthShape"
             style="@style/InGameShapesToChoose"
             android:contentDescription="@string/eighth_shape_to_choose"
             android:src="@drawable/ic_shape_square"/>
 
         <ImageButton
+            android:id="@+id/ninthShape"
             style="@style/InGameShapesToChoose"
             android:contentDescription="@string/ninth_shape_to_choose"
             android:src="@drawable/ic_shape_square"/>

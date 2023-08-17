@@ -21,7 +21,6 @@ import androidx.core.view.forEach
 
         initInfoBar(timer, stage)
 
-        //выбор составной фигуры и отображение ее
         val solvingShape: String = CompositeShape(2).chooseShape()
         val shapeToFind = findViewById<ImageView>(R.id.shapeToFind)
 
@@ -33,12 +32,29 @@ import androidx.core.view.forEach
         val fillColor = Color.rgb(160, 160, 160)
         shapeToFind.setColorFilter(fillColor)
 
+        val rightFields = PlayerField().chooseRightFields(stage.getStage())
+
+        val buttons = mutableMapOf<ImageButton, Int>()
+        var field = 1
+
         val viewGroup = findViewById<GridLayout>(R.id.gridLayout)
-        viewGroup.forEach {
-            if(it is ImageButton){
-                it.setColorFilter(setRandomColor())
-                it.setOnClickListener {
-                    // TODO: check for a right shape or not and give some feedback
+        viewGroup.forEach { button ->
+            if(button is ImageButton){
+
+                buttons[button] = field++
+
+                button.setColorFilter(setRandomColor())
+                button.setOnClickListener {
+                    if(buttons[button] in rightFields)
+                    {
+                        button.setImageResource(R.drawable.ic_right_field)
+                        button.setColorFilter(Color.GREEN)
+                    }
+                    else {
+                        button.setImageResource(R.drawable.ic_false_field)
+                        button.setColorFilter(Color.RED)
+                    }
+                    button.setOnClickListener(null)
                 }
             }
         }
