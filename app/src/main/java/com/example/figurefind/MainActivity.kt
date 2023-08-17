@@ -16,16 +16,12 @@ import androidx.core.view.forEach
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
-        //set timer
         val timer = Timer()
-        val timerView = findViewById<TextView>(R.id.timer)
-        timerView.text = timer.getTimer()
-
-        //set stage
         val stage = Stage()
-        val stageView = findViewById<TextView>(R.id.stage)
-        stageView.text = stage.getStage()
 
+        initInfoBar(timer, stage)
+
+        //выбор составной фигуры и отображение ее
         val solvingShape: String = CompositeShape(2).chooseShape()
         val shapeToFind = findViewById<ImageView>(R.id.shapeToFind)
 
@@ -47,6 +43,16 @@ import androidx.core.view.forEach
             }
         }
     }
+
+     private fun initInfoBar(timer: Timer, stage: Stage){
+         //set timer
+         val timerView = findViewById<TextView>(R.id.timer)
+         timerView.text = timer.getTimer()
+
+         //set stage
+         val stageView = findViewById<TextView>(R.id.stage)
+         stageView.text = stage.getStageString()
+     }
 
      private fun setRandomColor(): Int{
          val range = 0..255
