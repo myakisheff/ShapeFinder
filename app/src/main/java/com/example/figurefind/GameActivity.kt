@@ -26,22 +26,16 @@ import androidx.core.view.forEach
         val timer = Timer(timerView)
         val stage = Stage(stageNumber.toInt())
 
+        timer.createNewTimer(20000)
         stageView.text = stage.getStageString()
 
-        timer.createNewTimer(20000)
+        val playerField = PlayerField()
+        val countShapes = playerField.getNumberOfShapes(stageNumber.toInt())
 
-        val solvingShape: Pair<String, List<String>> = CompositeShape(2).chooseShape()
-        val shapeToFind = findViewById<ImageView>(R.id.shapeToFind)
+        val solvingShape: Pair<String, List<String>> = CompositeShape(countShapes).chooseShape()
+        drawCompositeShape(solvingShape.first)
 
-        //selecting a shape based on randomly chose shape
-        if(solvingShape.first == "ic_first_composite_shape")
-            shapeToFind.setImageResource(R.drawable.ic_first_composite_shape)
-        else shapeToFind.setImageResource(R.drawable.ic_second_composite_shape)
-
-        val fillColor = Color.rgb(160, 160, 160)
-        shapeToFind.setColorFilter(fillColor)
-
-        val rightFields = PlayerField().chooseRightFields(stage.stage)
+        val rightFields = playerField.chooseRightFields(stage.stage)
 
         val buttons = mutableMapOf<ImageButton, Int>()
         var field = 1
@@ -109,4 +103,14 @@ import androidx.core.view.forEach
          buttonView.setImageResource(id)
      }
 
+
+     private fun drawCompositeShape(compositeShape : String){
+         val shapeToFind = findViewById<ImageView>(R.id.shapeToFind)
+
+         val resID = resources.getIdentifier("ic_composite_shape_$compositeShape", "drawable", packageName)
+         shapeToFind.setImageResource(resID)
+
+         val fillColor = Color.rgb(160, 160, 160)
+         shapeToFind.setColorFilter(fillColor)
+     }
 }

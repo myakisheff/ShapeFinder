@@ -22,7 +22,7 @@ class PlayerField {
         return rightsSet
     }
 
-    private fun getNumberOfShapes(stages : Int): Int{
+    fun getNumberOfShapes(stages : Int): Int{
         return (stages - 1)/2 + 2
     }
 

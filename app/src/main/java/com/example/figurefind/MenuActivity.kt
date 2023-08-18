@@ -15,7 +15,7 @@ class MenuActivity : AppCompatActivity() {
 
         startButton.setOnClickListener {
             val game = Intent(this, GameActivity::class.java)
-            game.putExtra("stage", 1)
+            game.putExtra("stage", 3)
             startActivity(game)
         }
     }
