@@ -12,19 +12,23 @@ import androidx.core.view.forEach
 
  var rightShape = 0
 
- class MainActivity : AppCompatActivity() {
+ class GameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
+        val arguments = intent.extras
+        val stageNumber = arguments!!["stage"].toString()
+
         val timerView = findViewById<TextView>(R.id.timer)
+        val stageView = findViewById<TextView>(R.id.stage)
 
         val timer = Timer(timerView)
-        val stage = Stage()
+        val stage = Stage(stageNumber.toInt())
 
-        updateInfoBar(stage)
+        stageView.text = stage.getStageString()
 
-        timer.createNewTimer(20000);
+        timer.createNewTimer(20000)
 
         val solvingShape: Pair<String, List<String>> = CompositeShape(2).chooseShape()
         val shapeToFind = findViewById<ImageView>(R.id.shapeToFind)
@@ -37,7 +41,7 @@ import androidx.core.view.forEach
         val fillColor = Color.rgb(160, 160, 160)
         shapeToFind.setColorFilter(fillColor)
 
-        val rightFields = PlayerField().chooseRightFields(stage.getStage())
+        val rightFields = PlayerField().chooseRightFields(stage.stage)
 
         val buttons = mutableMapOf<ImageButton, Int>()
         var field = 1
@@ -64,18 +68,11 @@ import androidx.core.view.forEach
                         button.setColorFilter(Color.RED)
                         timer.removeTime(5000)
                     }
-                    updateInfoBar(stage)
                     button.setOnClickListener(null)
                 }
             }
         }
     }
-
-     private fun updateInfoBar(stage: Stage){
-         //set stage
-         val stageView = findViewById<TextView>(R.id.stage)
-         stageView.text = stage.getStageString()
-     }
 
      private fun setRandomColor(): Int{
          val range = 0..255
@@ -83,11 +80,12 @@ import androidx.core.view.forEach
      }
 
      private fun fillField(
-         numberOfField : Int,
-         buttonView : ImageButton,
-         rightFields : Set<Int>,
+         numberOfField: Int,
+         buttonView: ImageButton,
+         rightFields: Set<Int>,
          shapes: List<String>,
-         allShapes: Shapes, ){
+         allShapes: Shapes,
+     ){
 
          val id: Int
 

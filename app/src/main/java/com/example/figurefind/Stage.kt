@@ -1,10 +1,10 @@
 package com.example.figurefind
 
-class Stage {
-    private var stage: Int = 1
+class Stage (
+    var stage: Int
+){
 
     fun getStageString() = "Stage $stage"
-    fun getStage() = stage
 
     fun nextStage(){
         stage++
