@@ -15,8 +15,13 @@ class MenuActivity : AppCompatActivity() {
 
         startButton.setOnClickListener {
             val game = Intent(this, GameActivity::class.java)
-            game.putExtra("stage", 3)
+            game.putExtra("stage", 1)
             startActivity(game)
+            finish()
+        }
+
+        infoButton.setOnClickListener {
+            TODO("add new activity with information about game")
         }
     }
 

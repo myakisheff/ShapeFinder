@@ -16,6 +16,9 @@ class Shapes {
         listOfShapes.add("star")
         listOfShapes.add("trapezoid")
         listOfShapes.add("triangle")
+        listOfShapes.add("pentagon")
+        listOfShapes.add("chevron")
+        listOfShapes.add("diamond")
     }
 
     fun getShapes(): List<String> {
